@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your MOT, servicing, or repairs online with Motormedic Test Centre.">
+    <title>Book Online | Motormedic Test Centre</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: '#5359AC',    /* Indigo Plava */
+                        navy: '#0A0A0A',    /* Duboka Crna */
+                        softbeige: '#FFFFFF',
+                        white: '#FFFFFF',   
+                        lightgray: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(10, 10, 10, 0.08)',
+                        'float': '0 30px 60px -20px rgba(83, 89, 172, 0.2)',
+                        'glass': '0 8px 32px 0 rgba(10, 10, 10, 0.05)',
+                        'glow': '0 0 20px rgba(83, 89, 172, 0.4)',
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '4rem', 
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #F8F9FA; 
+            color: #333333;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4, h5, h6 { color: #0A0A0A; }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #5359AC;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after { width: 100%; }
+        
+        .premium-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(10, 10, 10, 0.05);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .hamburger-line {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            transform-origin: center;
+        }
+        .is-active .line-1 { transform: translateY(8px) rotate(45deg); }
+        .is-active .line-2 { opacity: 0; }
+        .is-active .line-3 { transform: translateY(-8px) rotate(-45deg); }
+
+        /* Custom Calendar Styling */
+        .calendar-day-radio:checked + label {
+            background-color: #5359AC;
+            color: #FFFFFF;
+            border-color: #5359AC;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(83, 89, 172, 0.5);
+            font-weight: bold;
+        }
+
+        .time-slot-radio:checked + label {
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            border-color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        /* Form Input Styling for Dark Theme */
+        .dark-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .dark-input:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #5359AC;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(83, 89, 172, 0.2);
+        }
+        .dark-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased relative selection:bg-teal selection:text-white">
+
+    <!-- NAVIGACIJA -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-3 md:py-4 premium-nav">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group z-50 relative">
+                    <span class="font-serif font-bold text-xl md:text-2xl text-navy tracking-wide transition-colors duration-300 group-hover:text-teal">Motormedic<span class="text-teal">.</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-10 bg-white/60 px-8 py-3 rounded-full shadow-glass border border-white">
+                    <a href="index.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
+                    <a href="services.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Services</a>
+                    <a href="about.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">About Us</a>
+                    <a href="contact.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Contact</a>
+                </div>
+
+                <!-- CTA Desktop -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="tel:+441440764884" class="flex items-center gap-2 text-navy font-serif italic text-lg hover:text-teal transition-all duration-300 hover:scale-105 active:scale-95">
+                        01440 764884
+                    </a>
+                    <a href="booking.html" class="bg-teal hover:bg-navy text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg active:scale-95 text-sm md:text-base transition-all duration-300">
+                        Book MOT Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-navy focus:outline-none p-2 -mr-2 z-50 relative group">
+                    <div class="w-6 h-5 flex flex-col justify-between">
+                        <span class="hamburger-line line-1 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
+                        <span class="hamburger-line line-2 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
+                        <span class="hamburger-line line-3 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl z-40 transform transition-all duration-500 opacity-0 pointer-events-none flex flex-col justify-center px-6">
+            <div class="flex flex-col space-y-6 text-center transform translate-y-8 transition-transform duration-500 delay-100" id="mobile-links">
+                <a href="index.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Home.</a>
+                <a href="services.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Services.</a>
+                <a href="about.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">About Us.</a>
+                <a href="contact.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Contact.</a>
+                <div class="pt-10 mt-6 border-t border-navy/10 flex flex-col items-center gap-4">
+                    <p class="text-xs uppercase tracking-widest text-gray-500">Call Us Directly</p>
+                    <a href="tel:+441440764884" class="font-serif italic text-3xl text-navy mb-4">01440 764884</a>
+                    <a href="booking.html" class="bg-teal hover:bg-navy text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md active:scale-95 transition-all duration-300 w-full max-w-xs text-center">
+                        Book Your Vehicle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PREMIUM BOOKING CALENDAR SECTION -->
+    <main class="flex-grow bg-navy pt-32 pb-24 md:pt-40 md:pb-32 relative overflow-hidden">
+        <!-- Abstract Dark Background Elements -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Header -->
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-4 mb-4">
+                    <div class="w-10 h-[1px] bg-teal"></div>
+                    <span class="font-sans text-xs uppercase tracking-widest font-semibold text-teal">Secure Your Slot</span>
+                    <div class="w-10 h-[1px] bg-teal"></div>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">Book an Appointment</h1>
+                <p class="text-white/60 font-light text-base md:text-lg">Select a convenient date and time from our calendar, and provide your vehicle details to confirm your booking.</p>
+            </div>
+
+            <!-- Booking App Container -->
+            <div class="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 shadow-2xl fade-in-up" style="transition-delay: 0.1s;">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+                    
+                    <!-- Left: Interactive Calendar -->
+                    <div class="flex flex-col">
+                        <div class="flex justify-between items-center mb-8">
+                            <h3 id="current-month-year" class="font-serif text-2xl md:text-3xl text-white font-bold">Loading...</h3>
+                            <div class="flex gap-2">
+                                <button id="prev-month" class="w-10 h-10 rounded-full bg-white/10 hover:bg-teal flex items-center justify-center text-white transition-colors border border-white/5 focus:outline-none">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                </button>
+                                <button id="next-month" class="w-10 h-10 rounded-full bg-white/10 hover:bg-teal flex items-center justify-center text-white transition-colors border border-white/5 focus:outline-none">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Days of Week -->
+                        <div class="grid grid-cols-7 gap-2 mb-4 text-center font-sans text-xs font-semibold text-white/40 uppercase tracking-widest">
+                            <div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div><div>Su</div>
+                        </div>
+
+                        <!-- Calendar Grid -->
+                        <div id="calendar-grid" class="grid grid-cols-7 gap-2 md:gap-3 font-sans text-sm">
+                            <!-- JS Will Inject Days Here -->
+                        </div>
+                    </div>
+
+                    <!-- Right: Time Slots & Form -->
+                    <div class="flex flex-col border-t lg:border-t-0 lg:border-l border-white/10 pt-10 lg:pt-0 lg:pl-10 lg:ml-6">
+                        
+                        <!-- Step 2: Time Slots (Hidden initially) -->
+                        <div id="time-selection" class="opacity-50 pointer-events-none transition-all duration-500">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-6 h-6 rounded-full bg-teal text-white flex items-center justify-center text-xs font-bold">2</div>
+                                <h4 class="font-serif text-xl text-white">Select a Time</h4>
+                            </div>
+                            
+                            <p id="selected-date-display" class="text-teal text-sm font-semibold mb-4 hidden">Date selected: <span></span></p>
+
+                            <div id="time-slots-grid" class="grid grid-cols-3 gap-3 mb-10">
+                                <!-- JS Will Inject Times Here -->
+                            </div>
+                        </div>
+
+                        <!-- Step 3: User Details (Hidden initially) -->
+                        <div id="details-section" class="opacity-50 pointer-events-none transition-all duration-500 flex-grow flex flex-col">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-6 h-6 rounded-full bg-teal text-white flex items-center justify-center text-xs font-bold">3</div>
+                                <h4 class="font-serif text-xl text-white">Your Details</h4>
+                            </div>
+
+                            <form id="booking-form" class="space-y-4 flex-grow flex flex-col">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-white/50 mb-1 ml-1 uppercase tracking-wide">Full Name</label>
+                                        <input type="text" required class="w-full dark-input rounded-xl px-4 py-3.5 text-sm" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-white/50 mb-1 ml-1 uppercase tracking-wide">Phone Number</label>
+                                        <input type="tel" required class="w-full dark-input rounded-xl px-4 py-3.5 text-sm" placeholder="07123 456789">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-xs font-medium text-white/50 mb-1 ml-1 uppercase tracking-wide">Email Address</label>
+                                    <input type="email" required class="w-full dark-input rounded-xl px-4 py-3.5 text-sm" placeholder="john@example.com">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-white/50 mb-1 ml-1 uppercase tracking-wide">Vehicle Registration</label>
+                                    <input type="text" required class="w-full dark-input rounded-xl px-4 py-3.5 text-sm uppercase" placeholder="AB12 CDE">
+                                </div>
+
+                                <button type="submit" class="w-full bg-teal hover:bg-white hover:text-navy text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all duration-300 mt-auto shadow-md">
+                                    Confirm Booking
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div id="booking-success" class="hidden h-full flex flex-col items-center justify-center text-center py-10">
+                            <div class="w-20 h-20 bg-teal/20 rounded-full flex items-center justify-center text-teal mb-6 shadow-glow">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <h3 class="font-serif text-3xl text-white mb-2 font-bold">Booking Confirmed!</h3>
+                            <p class="text-white/60 text-sm">Thank you. We have received your booking request and will be in touch shortly.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-12 pb-8 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/50">
+            <div class="flex items-center gap-3">
+                <span class="font-serif font-bold text-xl text-white tracking-widest">Motormedic<span class="text-teal">.</span></span>
+            </div>
+            <p class="text-center md:text-right font-light">&copy; 2026 Motormedic Test Centre Ltd.<br>All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SKRIPTE ZA MOBILNI MENI, ANIMACIJE I KALENDAR -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobilni Meni ---
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinksDiv = document.getElementById('mobile-links');
+            const links = mobileMenu.querySelectorAll('a');
+            let isMenuOpen = false;
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                mobileBtn.classList.toggle('is-active');
+
+                if(isMenuOpen) {
+                    mobileMenu.classList.remove('pointer-events-none', 'opacity-0');
+                    mobileMenu.classList.add('opacity-100');
+                    setTimeout(() => {
+                        mobileLinksDiv.classList.remove('translate-y-8', 'opacity-0');
+                        mobileLinksDiv.classList.add('translate-y-0', 'opacity-100');
+                    }, 50);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileLinksDiv.classList.remove('translate-y-0', 'opacity-100');
+                    mobileLinksDiv.classList.add('translate-y-8', 'opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-100');
+                        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    }, 300);
+                    document.body.style.overflow = '';
+                }
+            };
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            links.forEach(link => link.addEventListener('click', toggleMenu));
+
+            // --- Fade-in Animacije ---
+            const observerOptions = { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+            // --- INTERAKTIVNI KALENDAR LOGIKA ---
+            const calendarGrid = document.getElementById('calendar-grid');
+            const monthYearText = document.getElementById('current-month-year');
+            const prevBtn = document.getElementById('prev-month');
+            const nextBtn = document.getElementById('next-month');
+            
+            const timeSelectionDiv = document.getElementById('time-selection');
+            const timeSlotsGrid = document.getElementById('time-slots-grid');
+            const detailsSectionDiv = document.getElementById('details-section');
+            const selectedDateDisplay = document.getElementById('selected-date-display');
+            
+            const bookingForm = document.getElementById('booking-form');
+            const bookingSuccess = document.getElementById('booking-success');
+
+            let currentDate = new Date();
+            let selectedDate = null;
+            let selectedTime = null;
+
+            const timeSlots = ["09:00 AM", "10:30 AM", "11:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
+
+            function renderCalendar(date) {
+                calendarGrid.innerHTML = '';
+                
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                
+                // Postavljanje naslova meseca
+                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                monthYearText.textContent = `${monthNames[month]} ${year}`;
+
+                // Izracunavanje dana
+                const firstDayIndex = new Date(year, month, 1).getDay();
+                // Prilagodi za ponedeljak kao prvi dan (JS default nedelja je 0)
+                const startDay = firstDayIndex === 0 ? 6 : firstDayIndex - 1; 
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                const today = new Date();
+                today.setHours(0,0,0,0);
+
+                // Prazna polja pre 1. u mesecu
+                for (let i = 0; i < startDay; i++) {
+                    const emptyDiv = document.createElement('div');
+                    calendarGrid.appendChild(emptyDiv);
+                }
+
+                // Generisanje dana
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const cellDate = new Date(year, month, i);
+                    const isPast = cellDate < today;
+                    const isSunday = cellDate.getDay() === 0; // Nedelja (Zatvoreno)
+                    
+                    const dayId = `date-${year}-${month}-${i}`;
+                    
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'booking-date';
+                    input.id = dayId;
+                    input.className = 'hidden calendar-day-radio';
+                    input.value = cellDate.toISOString();
+                    
+                    if (isPast || isSunday) {
+                        input.disabled = true;
+                    }
+
+                    const label = document.createElement('label');
+                    label.htmlFor = dayId;
+                    label.textContent = i;
+                    
+                    // Stilizacija polja
+                    let baseClasses = "aspect-square flex items-center justify-center rounded-2xl transition-all cursor-pointer ";
+                    
+                    if (isPast || isSunday) {
+                        baseClasses += "border border-transparent text-white/20 cursor-not-allowed";
+                    } else {
+                        baseClasses += "bg-white/5 border border-white/10 text-white hover:bg-white/10";
+                    }
+                    
+                    label.className = baseClasses;
+
+                    // Event Listener za odabir datuma
+                    input.addEventListener('change', (e) => {
+                        selectedDate = new Date(e.target.value);
+                        showTimeSlots(selectedDate);
+                    });
+
+                    calendarGrid.appendChild(input);
+                    calendarGrid.appendChild(label);
+                }
+            }
+
+            function showTimeSlots(date) {
+                // Prikazi step 2
+                timeSelectionDiv.classList.remove('opacity-50', 'pointer-events-none');
+                selectedDateDisplay.classList.remove('hidden');
+                
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                selectedDateDisplay.querySelector('span').textContent = date.toLocaleDateString('en-GB', options);
+
+                // Generisi vremena
+                timeSlotsGrid.innerHTML = '';
+                timeSlots.forEach((time, index) => {
+                    const timeId = `time-${index}`;
+                    
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'booking-time';
+                    input.id = timeId;
+                    input.className = 'hidden time-slot-radio';
+                    input.value = time;
+
+                    const label = document.createElement('label');
+                    label.htmlFor = timeId;
+                    label.textContent = time;
+                    label.className = "py-3 text-center rounded-xl bg-white/5 border border-white/10 text-white cursor-pointer hover:bg-white/20 transition-all text-xs font-semibold uppercase tracking-wide";
+
+                    input.addEventListener('change', () => {
+                        selectedTime = time;
+                        detailsSectionDiv.classList.remove('opacity-50', 'pointer-events-none');
+                    });
+
+                    timeSlotsGrid.appendChild(input);
+                    timeSlotsGrid.appendChild(label);
+                });
+                
+                // Reset step 3
+                detailsSectionDiv.classList.add('opacity-50', 'pointer-events-none');
+                bookingForm.reset();
+            }
+
+            // Menjanje meseci
+            prevBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar(currentDate);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar(currentDate);
+            });
+
+            // Submit forme
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                timeSelectionDiv.classList.add('hidden');
+                detailsSectionDiv.classList.add('hidden');
+                calendarGrid.parentElement.classList.add('hidden'); // Sakrij kalendar kolonu
+                document.querySelector('.lg\\:border-l').classList.remove('lg\\:border-l'); // Skloni liniju
+                bookingSuccess.classList.remove('hidden');
+            });
+
+            // Inicijalno generisanje
+            renderCalendar(currentDate);
+        });
+    </script>
+</body>
+</html>

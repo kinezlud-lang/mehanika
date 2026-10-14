@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about Motormedic Test Centre Ltd, a trusted local garage based in Haverhill providing MOT testing, servicing, diagnostics, and repairs.">
+    <title>About Us | Motormedic Test Centre</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: '#5359AC',    /* Indigo Plava */
+                        navy: '#0A0A0A',    /* Duboka Crna */
+                        softbeige: '#FFFFFF',
+                        white: '#FFFFFF',   
+                        lightgray: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(10, 10, 10, 0.08)',
+                        'float': '0 30px 60px -20px rgba(83, 89, 172, 0.2)',
+                        'glass': '0 8px 32px 0 rgba(10, 10, 10, 0.05)',
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '4rem', 
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #F8F9FA; 
+            color: #333333;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 { color: #0A0A0A; }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #5359AC;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after { width: 100%; }
+        
+        .premium-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(10, 10, 10, 0.05);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .curved-bottom {
+            border-bottom-left-radius: 2.5rem;
+            border-bottom-right-radius: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .curved-bottom {
+                border-bottom-left-radius: 5rem;
+                border-bottom-right-radius: 5rem;
+            }
+        }
+
+        .hamburger-line {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            transform-origin: center;
+        }
+        .is-active .line-1 { transform: translateY(8px) rotate(45deg); }
+        .is-active .line-2 { opacity: 0; }
+        .is-active .line-3 { transform: translateY(-8px) rotate(-45deg); }
+    </style>
+</head>
+<body class="antialiased relative selection:bg-teal selection:text-white flex flex-col min-h-screen">
+
+    <!-- NAVIGACIJA -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-3 md:py-4 premium-nav">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3 group z-50 relative">
+                    <span class="font-serif font-bold text-xl md:text-2xl text-navy tracking-wide transition-colors duration-300 group-hover:text-teal">Motormedic<span class="text-teal">.</span></span>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-10 bg-white/60 px-8 py-3 rounded-full shadow-glass border border-white">
+                    <a href="index.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
+                    <a href="services.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Services</a>
+                    <!-- Active Link (About Us) -->
+                    <a href="about.html" class="nav-link text-teal font-medium transition-colors text-sm uppercase tracking-wide after:w-full">About Us</a>
+                    <a href="contact.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Contact</a>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="tel:+441440764884" class="flex items-center gap-2 text-navy font-serif italic text-lg hover:text-teal transition-all duration-300 hover:scale-105 active:scale-95">
+                        01440 764884
+                    </a>
+                    <a href="booking.html" class="bg-teal hover:bg-navy text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg active:scale-95 text-sm md:text-base transition-all duration-300">
+                        Book MOT Now
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-navy focus:outline-none p-2 -mr-2 z-50 relative group">
+                    <div class="w-6 h-5 flex flex-col justify-between">
+                        <span class="hamburger-line line-1 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
+                        <span class="hamburger-line line-2 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
+                        <span class="hamburger-line line-3 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl z-40 transform transition-all duration-500 opacity-0 pointer-events-none flex flex-col justify-center px-6">
+            <div class="flex flex-col space-y-6 text-center transform translate-y-8 transition-transform duration-500 delay-100" id="mobile-links">
+                <a href="index.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Home.</a>
+                <a href="services.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Services.</a>
+                <a href="about.html" class="block font-serif font-bold text-teal text-4xl hover:text-navy transition-colors py-2">About Us.</a>
+                <a href="contact.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Contact.</a>
+                <div class="pt-10 mt-6 border-t border-navy/10 flex flex-col items-center gap-4">
+                    <p class="text-xs uppercase tracking-widest text-gray-500">Call Us Directly</p>
+                    <a href="tel:+441440764884" class="font-serif italic text-3xl text-navy mb-4">01440 764884</a>
+                    <a href="booking.html" class="bg-navy hover:bg-teal text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md active:scale-95 transition-all duration-300 w-full max-w-xs text-center">
+                        Book Your Vehicle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER: ABOUT US -->
+    <header class="relative pt-36 pb-20 md:pt-48 lg:pt-52 lg:pb-32 bg-white curved-bottom overflow-hidden shadow-soft">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center fade-in-up">
+            <div class="inline-flex items-center gap-4 mb-6 justify-center">
+                <div class="w-8 h-[2px] bg-teal"></div>
+                <span class="font-sans text-xs uppercase tracking-widest font-semibold text-teal">Our Story</span>
+                <div class="w-8 h-[2px] bg-teal"></div>
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-navy mb-8">
+                Who We <span class="italic text-teal">Are.</span>
+            </h1>
+            <p class="text-gray-500 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+                Dedicated to providing reliable, honest, and high-quality vehicle care for the Haverhill community.
+            </p>
+        </div>
+    </header>
+
+    <!-- GLAVNA "WHO WE ARE" SEKCIJA (Modifikovana po zahtevu) -->
+    <main class="flex-grow">
+        <section class="py-20 md:py-32 bg-lightgray overflow-hidden relative z-10">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    
+                    <!-- Slike Paralax Effect -->
+                    <div class="fade-in-up order-2 lg:order-1 relative mt-10 lg:mt-0">
+                        <div class="rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-soft aspect-[4/5] md:aspect-[3/4] relative group border border-white">
+                            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Garage Workshop" loading="lazy" class="w-full h-full object-cover transform transition-transform duration-[2s] group-hover:scale-105 filter grayscale-[20%]">
+                        </div>
+                        <!-- Manja floating slika -->
+                        <div class="absolute -bottom-8 -right-4 md:-bottom-12 md:-right-12 w-3/5 md:w-1/2 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-float border-[6px] md:border-8 border-white group">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Car Engine Repair" loading="lazy" class="w-full h-full object-cover transform transition-transform duration-[2s] group-hover:scale-110 filter grayscale-[10%]">
+                        </div>
+                    </div>
+                    
+                    <!-- Tekst -->
+                    <div class="fade-in-up order-1 lg:order-2">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-px bg-teal"></div>
+                            <h2 class="text-teal font-semibold tracking-widest uppercase text-xs md:text-sm">We love to help you</h2>
+                        </div>
+                        <h3 class="text-4xl md:text-5xl font-serif font-bold text-navy leading-tight mb-8">Committed to <br><span class="italic font-light text-gray-500">Excellence.</span></h3>
+                        
+                        <p class="text-gray-500 text-base md:text-lg leading-relaxed mb-10">
+                            Motormedic Test Centre Ltd is a trusted local garage based in Haverhill, providing MOT testing, servicing, diagnostics, tyres, and vehicle repairs. Our goal is to deliver honest advice, reliable workmanship, and a smooth customer experience every time.
+                        </p>
+
+                        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-navy/5 mb-10">
+                            <div class="space-y-6">
+                                <!-- Check List Item 1 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal flex-shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <span class="font-bold text-navy text-lg">Best Quality Standards</span>
+                                </div>
+                                <!-- Check List Item 2 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal flex-shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <span class="font-bold text-navy text-lg">Customer Satisfaction Focused</span>
+                                </div>
+                                <!-- Check List Item 3 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal flex-shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <span class="font-bold text-navy text-lg">Reliable Vehicle Inspection</span>
+                                </div>
+                                <!-- Check List Item 4 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal flex-shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <span class="font-bold text-navy text-lg">Experienced Garage Team</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="pt-4">
+                            <a href="booking.html" class="inline-flex items-center justify-center gap-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal transition-all duration-300 shadow-md active:scale-95">Book an Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DODATNI "NAŠ PRISTUP" DEO (Vizuelna podrška) -->
+        <section class="py-20 md:py-32 bg-white relative">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 fade-in-up">
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-navy mb-6">Built on Trust.</h3>
+                    <p class="text-gray-500 text-base md:text-lg">We don't believe in unnecessary upselling. We believe in clear communication, fair pricing, and getting you safely back on the road.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-lightgray p-10 rounded-4xl text-center fade-in-up hover:-translate-y-2 transition-transform duration-300 border border-navy/5">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-teal mx-auto mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-navy text-xl mb-3">Honesty First</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">You will always be informed before any work is carried out on your vehicle. No hidden costs.</p>
+                    </div>
+                    <div class="bg-lightgray p-10 rounded-4xl text-center fade-in-up hover:-translate-y-2 transition-transform duration-300 border border-navy/5" style="transition-delay: 0.1s;">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-teal mx-auto mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-navy text-xl mb-3">Modern Equipment</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">We invest in the latest diagnostic tools to ensure accurate fault finding and efficient repairs.</p>
+                    </div>
+                    <div class="bg-lightgray p-10 rounded-4xl text-center fade-in-up hover:-translate-y-2 transition-transform duration-300 border border-navy/5" style="transition-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-teal mx-auto mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-navy text-xl mb-3">Local Support</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">As a local business, we rely on the satisfaction of our community and strive to build long-term relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VELIKA CALL TO ACTION SEKCIJA -->
+        <section class="py-24 md:py-32 bg-navy relative overflow-hidden curved-bottom border-b-8 border-teal">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600661653561-629509216228?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] opacity-5 bg-cover bg-center"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center fade-in-up">
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-8">
+                    Experience the <br><span class="italic text-teal">Difference.</span>
+                </h2>
+                <p class="text-white/70 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto">
+                    Whether you need a simple MOT test or complex diagnostics, Motormedic Test Centre is ready to help.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-3 bg-teal hover:bg-white hover:text-navy text-white px-12 py-6 rounded-full font-bold text-xl uppercase tracking-wider transition-all duration-300 shadow-float active:scale-95 group">
+                        Contact Us Today
+                        <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-12 pb-8 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/50">
+            <div class="flex items-center gap-3">
+                <span class="font-serif font-bold text-xl text-white tracking-widest">Motormedic<span class="text-teal">.</span></span>
+            </div>
+            <p class="text-center md:text-right font-light">&copy; 2026 Motormedic Test Centre Ltd.<br>All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SKRIPTE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinksDiv = document.getElementById('mobile-links');
+            const links = mobileMenu.querySelectorAll('a');
+            let isMenuOpen = false;
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                mobileBtn.classList.toggle('is-active');
+
+                if(isMenuOpen) {
+                    mobileMenu.classList.remove('pointer-events-none');
+                    mobileMenu.classList.remove('opacity-0');
+                    mobileMenu.classList.add('opacity-100');
+                    setTimeout(() => {
+                        mobileLinksDiv.classList.remove('translate-y-8', 'opacity-0');
+                        mobileLinksDiv.classList.add('translate-y-0', 'opacity-100');
+                    }, 50);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileLinksDiv.classList.remove('translate-y-0', 'opacity-100');
+                    mobileLinksDiv.classList.add('translate-y-8', 'opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-100');
+                        mobileMenu.classList.add('opacity-0');
+                        mobileMenu.classList.add('pointer-events-none');
+                    }, 300);
+                    document.body.style.overflow = '';
+                }
+            };
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            links.forEach(link => link.addEventListener('click', toggleMenu));
+
+            const observerOptions = { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
