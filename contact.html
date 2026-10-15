@@ -1,317 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Motormedic Test Centre in Haverhill for MOT testing, vehicle servicing, diagnostics, tyres, and repairs.">
-    <title>Contact Us | Motormedic Test Centre</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        teal: '#5359AC',    /* Indigo Plava */
-                        navy: '#0A0A0A',    /* Duboka Crna */
-                        softbeige: '#FFFFFF',
-                        white: '#FFFFFF',   
-                        lightgray: '#F8F9FA'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(10, 10, 10, 0.08)',
-                        'float': '0 30px 60px -20px rgba(83, 89, 172, 0.2)',
-                        'glass': '0 8px 32px 0 rgba(10, 10, 10, 0.05)',
-                    },
-                    borderRadius: {
-                        '4xl': '2.5rem',
-                        '5xl': '4rem', 
-                    },
-                    animation: {
-                        'float-slow': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #F8F9FA; 
-            color: #333333;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        h1, h2, h3, h4, h5, h6 { color: #0A0A0A; }
-
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        .nav-link { position: relative; }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 50%;
-            background-color: #5359AC;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translateX(-50%);
-        }
-        .nav-link:hover::after { width: 100%; }
-        
-        .premium-nav {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(10, 10, 10, 0.05);
-        }
-
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .hamburger-line {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-            transform-origin: center;
-        }
-        .is-active .line-1 { transform: translateY(8px) rotate(45deg); }
-        .is-active .line-2 { opacity: 0; }
-        .is-active .line-3 { transform: translateY(-8px) rotate(-45deg); }
-
-        /* Custom Map Grayscale Filter */
-        .map-container iframe {
-            filter: grayscale(80%) contrast(1.2) opacity(0.9);
-            transition: filter 0.5s ease;
-        }
-        .map-container:hover iframe {
-            filter: grayscale(0%) contrast(1) opacity(1);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d0f">
+  <meta name="description" content="Contact Motormedic Test Centre Ltd in Haverhill or send a booking enquiry for MOT testing, servicing, diagnostics, tyres and vehicle repairs.">
+  <title>Book Now & Contact | Motormedic Test Centre Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0d0f;--panel:#111417;--panel2:#161a1e;--text:#f5f5f2;--muted:#a7adb2;--muted2:#727a80;--accent:#fca511;--line:rgba(255,255,255,.11);--max:1240px}
+    *,*::before,*::after{box-sizing:border-box}
+    html{width:100%;max-width:100%;overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:90px}
+    @supports not (overflow:clip){html{overflow-x:hidden}}
+    body{margin:0;width:100%;max-width:100%;overflow-x:clip;background:var(--bg);color:var(--muted);font:400 16px/1.65 "DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+    @supports not (overflow:clip){body{overflow-x:hidden}}
+    body.menu-open{overflow:hidden} img,svg{display:block;max-width:100%} a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit} button,a{-webkit-tap-highlight-color:transparent} ::selection{background:var(--accent);color:#111} :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#090a0b}::-webkit-scrollbar-thumb{background:#41464a}::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+    .container{width:min(var(--max),calc(100% - 48px));max-width:100%;min-width:0;margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font:600 .75rem/1.2 "Oswald",sans-serif;letter-spacing:.19em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+    h1,h2,h3,h4{margin-top:0;font-family:"Oswald",sans-serif;text-transform:uppercase} h1,h2,p{margin-top:0}
+    h2{margin-bottom:22px;color:var(--text);font-size:clamp(2.4rem,5vw,4.6rem);line-height:.98;letter-spacing:-.035em}.accent{color:var(--accent)}
+    .site-header{position:fixed;inset:0 0 auto;z-index:100;background:rgba(11,13,15,.88);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    .nav-wrap{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;gap:11px;color:var(--text);font:700 1.65rem/1 "Oswald",sans-serif;text-transform:uppercase;letter-spacing:.025em;white-space:nowrap}
+    .brand-mark{width:35px;height:35px;display:grid;place-items:center;background:var(--accent);color:#111;font:700 1.15rem/1 "Oswald",sans-serif;clip-path:polygon(0 0,100% 0,100% 74%,74% 100%,0 100%)}.brand-word span{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:clamp(18px,2.6vw,38px)}.nav-links>a:not(.button){color:#c3c7ca;font:500 .77rem/1 "Oswald",sans-serif;text-transform:uppercase;letter-spacing:.13em;transition:color .2s}.nav-links>a:not(.button):hover,.nav-links>a[aria-current=page]{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:52px;padding:0 23px;border:1px solid var(--accent);background:var(--accent);color:#111;font:600 .8rem/1 "Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+    .button:hover{transform:translateY(-2px);background:#ffb82e;border-color:#ffb82e}.button:active{transform:scale(.985)}.button-outline{background:transparent;color:var(--text);border-color:rgba(255,255,255,.28)}.button-outline:hover{background:var(--text);color:#111;border-color:var(--text)}.button svg{width:17px;height:17px;flex:0 0 auto}
+    .menu-toggle{display:none;position:relative;z-index:105;width:44px;height:44px;place-items:center;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer}.menu-toggle svg{width:22px;height:22px}.menu-toggle .icon-close{display:none}body.menu-open .menu-toggle .icon-menu{display:none}body.menu-open .menu-toggle .icon-close{display:block}
+    .scroll-progress{position:fixed;inset:0 auto auto 0;z-index:120;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left center;pointer-events:none;will-change:transform}
+    .page-hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:550px;padding:155px 0 78px;overflow:hidden;background:#0b0d0f}
+    .page-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(8,10,11,.98) 0%,rgba(8,10,11,.9) 42%,rgba(8,10,11,.48) 100%),url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=2000&q=85') center 52%/cover no-repeat}
+    .page-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,var(--bg),transparent 35%)}
+    .hero-copy{max-width:790px}.hero-copy h1{margin:22px 0 24px;color:var(--text);font-size:clamp(4rem,9vw,7.8rem);line-height:.85;letter-spacing:-.045em}.outline{color:transparent;-webkit-text-stroke:1.5px var(--text)}.hero-copy>p{max-width:620px;margin-bottom:28px;font-size:clamp(1rem,1.5vw,1.12rem);line-height:1.8}.hero-meta{display:flex;flex-wrap:wrap;gap:13px 24px;margin-top:27px;color:#e1e3e4;font-size:.82rem}.hero-meta span{display:inline-flex;align-items:center;gap:9px}.hero-meta svg{width:17px;height:17px;flex:0 0 auto;color:var(--accent)}
+    .contact-section{padding:95px 0 105px;background:var(--bg)}.contact-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,7vw,94px);align-items:start}.contact-copy{min-width:0}.contact-copy h2{margin-top:19px}.contact-copy>p{max-width:440px}.contact-cards{display:grid;gap:0;margin-top:35px;border-top:1px solid var(--line)}.contact-card{display:flex;align-items:flex-start;gap:15px;padding:21px 0;border-bottom:1px solid var(--line);min-width:0}.contact-icon{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid rgba(252,165,17,.36);color:var(--accent)}.contact-icon svg{width:21px;height:21px}.contact-card small{display:block;margin-bottom:4px;color:var(--muted2);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase}.contact-card strong,.contact-card a,.contact-card address{display:block;color:var(--text);font-size:.92rem;font-weight:500;font-style:normal;overflow-wrap:anywhere;line-height:1.65}.contact-card a:hover{color:var(--accent)}.contact-card .subtle{display:block;margin-top:4px;color:var(--muted);font-size:.8rem}
+    .form-panel{position:relative;min-width:0;padding:clamp(24px,4vw,44px);border:1px solid var(--line);background:linear-gradient(145deg,#15191c,#101214);overflow:hidden}.form-panel::before{content:"";position:absolute;top:-100px;right:-100px;width:240px;height:240px;border:1px solid rgba(252,165,17,.14);border-radius:50%;pointer-events:none;animation:orbit 34s linear infinite}.form-panel::after{content:"";position:absolute;top:-65px;right:-65px;width:170px;height:170px;border:1px dashed rgba(252,165,17,.15);border-radius:50%;pointer-events:none;animation:orbit 26s linear infinite reverse}@keyframes orbit{to{transform:rotate(360deg)}}
+    .form-heading{position:relative;z-index:1;margin-bottom:29px}.form-heading h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0}.form-heading p{margin:0;max-width:540px;font-size:.9rem;line-height:1.75}
+    .booking-form{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.field{display:grid;gap:8px;min-width:0}.field.full{grid-column:1/-1}.field label{color:#e4e6e7;font-size:.76rem;font-weight:600;letter-spacing:.045em}.field label span{color:var(--muted2);font-weight:400}.field input,.field select,.field textarea{width:100%;min-width:0;min-height:51px;padding:13px 14px;border:1px solid rgba(255,255,255,.14);border-radius:0;background:#0b0d0f;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(252,165,17,.09)}.field input::placeholder,.field textarea::placeholder{color:#737a7f}.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fca511' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}.field select:invalid{color:#737a7f}.field select option{background:#111417;color:var(--text)}.field textarea{min-height:130px;resize:vertical;line-height:1.6}.form-foot{grid-column:1/-1;display:grid;gap:14px;margin-top:3px}.form-foot .button{width:100%;min-height:58px}.form-note{margin:0;color:var(--muted2);font-size:.75rem;line-height:1.6}.form-status{display:none;padding:14px;border:1px solid rgba(252,165,17,.4);color:var(--text);font-size:.86rem;line-height:1.6}.form-status.show{display:block}.direct-call{display:flex;align-items:center;gap:14px;margin-top:27px;padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.direct-call svg{width:23px;height:23px;flex:0 0 auto;color:var(--accent)}.direct-call small{display:block;color:var(--muted2);font-size:.69rem;letter-spacing:.12em;text-transform:uppercase}.direct-call a{color:var(--text);font:500 1.45rem/1.35 "Oswald",sans-serif}.direct-call a:hover{color:var(--accent)}
+    .bottom-band{position:relative;isolation:isolate;overflow:hidden;padding:78px 0;background:#111417;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.bottom-band::before{content:"";position:absolute;z-index:-1;right:8%;top:50%;width:260px;aspect-ratio:1;border:1px solid rgba(252,165,17,.2);border-radius:50%;transform:translateY(-50%);animation:orbit 35s linear infinite}.bottom-band::after{content:"";position:absolute;z-index:-1;right:12%;top:50%;width:180px;aspect-ratio:1;border:1px dashed rgba(252,165,17,.16);border-radius:50%;transform:translateY(-50%);animation:orbit 28s linear infinite reverse}.bottom-content{max-width:770px}.bottom-content h2{margin:15px 0 19px}.bottom-content p{max-width:590px;margin-bottom:25px}
+    footer{background:#08090a;border-top:1px solid var(--line)}.footer-main{display:grid;grid-template-columns:1.25fr .8fr 1fr;gap:50px;padding:60px 0 48px}.footer-brand .brand{margin-bottom:20px}.footer-brand p{max-width:390px;font-size:.86rem}.footer-column h3{margin-bottom:18px;color:var(--text);font-size:1rem;letter-spacing:.09em}.footer-column p,.footer-column address{margin-bottom:8px;color:var(--muted);font-size:.85rem;font-style:normal}.footer-column a:hover,.footer-bottom a:hover{color:var(--accent)}.footer-phone{display:inline-block;margin-top:6px;color:var(--text);font:500 1.65rem/1.2 "Oswald",sans-serif}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--line);color:#747b80;font-size:.74rem}.footer-bottom p{margin:0}.mobile-call{display:none}.reveal{opacity:1;transform:none}
+    @media(prefers-reduced-motion:no-preference){.js-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.js-ready .reveal.is-visible{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.container{width:calc(100% - 40px)}.nav-wrap{min-height:74px}.menu-toggle{display:grid}.nav-links{position:fixed;inset:0;z-index:103;width:100%;height:100vh;height:100dvh;display:none;flex-direction:column;align-items:stretch;justify-content:center;gap:0;overflow-y:auto;overscroll-behavior:contain;padding:100px max(28px,env(safe-area-inset-right)) max(35px,env(safe-area-inset-bottom)) max(28px,env(safe-area-inset-left));background:#080a0b;border:0}.nav-links.open{display:flex}.nav-links>a:not(.button){width:100%;padding:22px 4px;border-bottom:1px solid var(--line);font:500 clamp(1.45rem,5vw,2rem)/1.2 "Oswald",sans-serif;letter-spacing:.08em}.nav-links .button{width:100%;min-height:58px;margin-top:25px;font-size:.9rem}body.menu-open .menu-toggle{position:fixed;top:max(14px,env(safe-area-inset-top));right:max(18px,env(safe-area-inset-right))}.page-hero{min-height:490px;padding:130px 0 68px}.contact-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:34px}.footer-main{gap:28px}}
+    @media(max-width:640px){html{scroll-padding-top:70px}.container{width:calc(100% - 32px)}.brand{font-size:1.35rem;gap:9px}.brand-mark{width:31px;height:31px}.nav-wrap{min-height:70px;gap:12px}.menu-toggle{flex:0 0 44px}.nav-links{padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}.nav-links>a:not(.button){font-size:clamp(1.35rem,6vw,1.85rem)}.page-hero{min-height:auto;padding:120px 0 55px}.page-hero::before{background-position:58% center}.hero-copy h1{font-size:clamp(3.2rem,15vw,5rem);line-height:.91;margin:20px 0 22px}.hero-copy>p{font-size:.98rem;line-height:1.8}.hero-meta{display:grid;gap:12px;margin-top:23px}.contact-section{padding:65px 0 70px}.contact-layout{grid-template-columns:minmax(0,1fr);gap:37px}.contact-copy h2{font-size:clamp(2.5rem,11vw,3.6rem)}.contact-cards{margin-top:26px}.contact-card{padding:18px 0;gap:12px}.contact-icon{width:40px;height:40px;flex-basis:40px}.contact-card strong,.contact-card a,.contact-card address{font-size:.88rem}.form-panel{padding:24px 18px}.form-heading{margin-bottom:24px}.form-heading h2{font-size:clamp(2rem,9vw,2.7rem)}.booking-form{grid-template-columns:minmax(0,1fr);gap:16px}.field.full,.form-foot{grid-column:auto}.field input,.field select{min-height:53px;font-size:16px}.field textarea{min-height:120px;font-size:16px}.form-foot .button{min-height:58px}.direct-call{padding:15px}.direct-call a{font-size:1.3rem}.bottom-band{padding:62px 0}.bottom-band::before{right:-100px;width:220px}.bottom-band::after{right:-70px;width:150px}.bottom-content h2{font-size:clamp(2.4rem,10vw,3.2rem)}.bottom-content p{font-size:.95rem;line-height:1.75}.bottom-content .button{width:100%;min-height:56px}.footer-main{grid-template-columns:minmax(0,1fr);gap:30px;padding:44px 0 32px}.footer-bottom{flex-direction:column;gap:8px;padding-bottom:calc(20px + env(safe-area-inset-bottom))}.mobile-call{position:fixed;z-index:90;display:flex;align-items:center;justify-content:center;gap:10px;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));min-height:54px;padding:0 18px;background:var(--accent);color:#111;font:600 .8rem/1 "Oswald",sans-serif;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.4);border:0;border-radius:2px}.mobile-call svg{width:19px;height:19px;flex:0 0 19px}body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
 </head>
-<body class="antialiased relative selection:bg-teal selection:text-white flex flex-col min-h-screen">
-
-    <!-- NAVIGACIJA -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-3 md:py-4 premium-nav">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center gap-3 group z-50 relative">
-                    <span class="font-serif font-bold text-xl md:text-2xl text-navy tracking-wide transition-colors duration-300 group-hover:text-teal">Motormedic<span class="text-teal">.</span></span>
-                </a>
-
-                <div class="hidden lg:flex items-center space-x-10 bg-white/60 px-8 py-3 rounded-full shadow-glass border border-white">
-                    <a href="index.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
-                    <a href="services.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">Services</a>
-                    <a href="about.html" class="nav-link text-navy hover:text-teal font-medium transition-colors text-sm uppercase tracking-wide">About Us</a>
-                    <!-- Active Link (Contact) -->
-                    <a href="contact.html" class="nav-link text-teal font-medium transition-colors text-sm uppercase tracking-wide after:w-full">Contact</a>
-                </div>
-
-                <div class="hidden lg:flex items-center gap-6">
-                    <a href="tel:+441440764884" class="flex items-center gap-2 text-navy font-serif italic text-lg hover:text-teal transition-all duration-300 hover:scale-105 active:scale-95">
-                        01440 764884
-                    </a>
-                    <a href="booking.html" class="bg-teal hover:bg-navy text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg active:scale-95 text-sm md:text-base transition-all duration-300">
-                        Book MOT Now
-                    </a>
-                </div>
-
-                <button id="mobile-menu-btn" class="lg:hidden text-navy focus:outline-none p-2 -mr-2 z-50 relative group">
-                    <div class="w-6 h-5 flex flex-col justify-between">
-                        <span class="hamburger-line line-1 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
-                        <span class="hamburger-line line-2 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
-                        <span class="hamburger-line line-3 w-full h-0.5 bg-navy rounded-full group-hover:bg-teal"></span>
-                    </div>
-                </button>
-            </div>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Motor Medic home"><span class="brand-mark" aria-hidden="true">M</span><span class="brand-word">Motor<span>Medic</span></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <nav class="nav-links" id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about-us.html">About Us</a><a href="index.html#services">Services</a><a href="#contact" aria-current="page">Contact</a><a class="button" href="#booking">Book Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="contact-section" id="contact"><div class="container contact-layout">
+      <aside class="contact-copy reveal"><span class="eyebrow">Contact The Garage</span><h2>Let’s Get Your<br><span class="accent">Vehicle Sorted.</span></h2><p>Use the enquiry form to tell us what service you need. Prefer to speak to someone? Call or email Motormedic directly.</p>
+        <div class="contact-cards">
+          <div class="contact-card"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 18a19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.9L7.2 9.4a16 16 0 0 0 6 6l1.8-1.8a2 2 0 0 1 1.9-.6l3 .5a2 2 0 0 1 2.1 2Z"/></svg></span><div><small>Call the garage</small><a href="tel:+441440764884">+44 1440 764884</a><span class="subtle">Tap to call from your phone</span></div></div>
+          <div class="contact-card"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg></span><div><small>Email</small><a href="mailto:contactus@motormedictestcentre.co.uk">contactus@motormedictestcentre.co.uk</a><span class="subtle">Send us your question or booking request</span></div></div>
+          <div class="contact-card"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Visit the garage</small><address>Unit 08, Spring Rise, Falconer Road<br>Haverhill, Suffolk CB9 7XU, United Kingdom</address><a class="subtle" href="https://www.google.com/maps/search/?api=1&query=Unit+08+Spring+Rise+Falconer+Road+Haverhill+CB9+7XU" target="_blank" rel="noopener noreferrer">Open directions ↗</a></div></div>
         </div>
-        
-        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl z-40 transform transition-all duration-500 opacity-0 pointer-events-none flex flex-col justify-center px-6">
-            <div class="flex flex-col space-y-6 text-center transform translate-y-8 transition-transform duration-500 delay-100" id="mobile-links">
-                <a href="index.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Home.</a>
-                <a href="services.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">Services.</a>
-                <a href="about.html" class="block font-serif font-bold text-navy text-4xl hover:text-teal transition-colors py-2">About Us.</a>
-                <a href="contact.html" class="block font-serif font-bold text-teal text-4xl hover:text-navy transition-colors py-2">Contact.</a>
-                <div class="pt-10 mt-6 border-t border-navy/10 flex flex-col items-center gap-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500">Call Us Directly</p>
-                    <a href="tel:+441440764884" class="font-serif italic text-3xl text-navy mb-4">01440 764884</a>
-                    <a href="booking.html" class="bg-navy hover:bg-teal text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md active:scale-95 transition-all duration-300 w-full max-w-xs text-center">
-                        Book Your Vehicle
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- CONTACT SPLIT SCREEN SEKCIJA -->
-    <main class="flex-grow pt-24 md:pt-32">
-        <section class="flex flex-col lg:flex-row min-h-[85vh] bg-white">
-            
-            <!-- Leva Strana: Mapa -->
-            <div class="w-full lg:w-1/2 min-h-[400px] lg:min-h-full relative map-container order-2 lg:order-1 bg-lightgray">
-                <!-- POPRAVLJEN MAP EMBED (Traži po adresi umesto pb koda) -->
-                <iframe 
-                    src="https://maps.google.com/maps?q=Unit%2008,%20Spring%20Rise%20Falconer%20Road,%20Haverhill%20CB9%207XU,%20UK&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    class="absolute inset-0 w-full h-full border-0" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                
-                <!-- Floating Card on Map -->
-                <div class="absolute bottom-8 left-8 right-8 lg:right-auto lg:w-80 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-float z-10 border border-white fade-in-up" style="transition-delay: 0.4s;">
-                    <h5 class="font-serif font-bold text-navy text-xl mb-2">Motormedic Test Centre</h5>
-                    <p class="text-sm text-gray-500 mb-4">Unit 08, Spring Rise Falconer Road, Haverhill CB9 7XU</p>
-                    <a href="https://maps.google.com/?q=Unit+08,+Spring+Rise+Falconer+Road,+Haverhill+CB9+7XU" target="_blank" class="inline-flex items-center gap-2 text-teal font-semibold text-sm hover:text-navy transition-colors">
-                        Get Directions
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Desna Strana: Info -->
-            <div class="w-full lg:w-1/2 bg-white flex flex-col justify-center px-6 py-20 md:px-16 lg:px-24 relative overflow-hidden order-1 lg:order-2">
-                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-lightgray rounded-full z-0"></div>
-                
-                <div class="relative z-10 fade-in-up">
-                    <div class="inline-flex items-center gap-4 mb-6">
-                        <div class="w-8 h-[2px] bg-teal"></div>
-                        <span class="font-sans text-xs uppercase tracking-widest font-semibold text-teal">Get In Touch</span>
-                    </div>
-                    <h1 class="text-5xl lg:text-6xl font-serif font-bold text-navy mb-12">Contact & <br>Visit Us.</h1>
-
-                    <div class="space-y-10">
-                        
-                        <!-- Adresa -->
-                        <div class="flex items-start gap-6 group">
-                            <div class="w-14 h-14 rounded-2xl bg-lightgray flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-sm border border-navy/5 group-hover:-translate-y-1">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xl text-navy mb-2">Garage Location</h4>
-                                <p class="text-gray-500 text-base leading-relaxed">Unit 08, Spring Rise Falconer Road<br>Haverhill CB9 7XU, United Kingdom</p>
-                            </div>
-                        </div>
-
-                        <!-- Telefon i Email -->
-                        <div class="flex items-start gap-6 group">
-                            <div class="w-14 h-14 rounded-2xl bg-lightgray flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-sm border border-navy/5 group-hover:-translate-y-1">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xl text-navy mb-2">Direct Contact</h4>
-                                <a href="tel:+441440764884" class="block text-teal font-semibold hover:text-navy transition-colors mb-1 text-lg">01440 764884</a>
-                                <a href="mailto:contactus@motormedictestcentre.co.uk" class="text-gray-500 text-sm hover:text-teal transition-colors">contactus@motormedictestcentre.co.uk</a>
-                            </div>
-                        </div>
-
-                        <!-- Radno vreme -->
-                        <div class="flex items-start gap-6 group">
-                            <div class="w-14 h-14 rounded-2xl bg-lightgray flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-sm border border-navy/5 group-hover:-translate-y-1">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xl text-navy mb-2">Opening Hours</h4>
-                                <p class="text-gray-500 text-base leading-relaxed">Monday - Friday: 8:30 AM - 5:30 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
-                            </div>
-                        </div>
-
-                        <div class="pt-8 border-t border-gray-100">
-                            <p class="text-sm text-gray-500 mb-4">Want to reserve a specific time?</p>
-                            <a href="booking.html" class="inline-flex items-center justify-center gap-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal transition-all duration-300 shadow-md active:scale-95 w-full sm:w-auto">
-                                Open Booking Calendar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-navy pt-12 pb-8 border-t border-white/10 mt-auto">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/50">
-            <div class="flex items-center gap-3">
-                <span class="font-serif font-bold text-xl text-white tracking-widest">Motormedic<span class="text-teal">.</span></span>
-            </div>
-            <p class="text-center md:text-right font-light">&copy; 2026 Motormedic Test Centre Ltd.<br>All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- SKRIPTE -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinksDiv = document.getElementById('mobile-links');
-            const links = mobileMenu.querySelectorAll('a');
-            let isMenuOpen = false;
-
-            const toggleMenu = () => {
-                isMenuOpen = !isMenuOpen;
-                mobileBtn.classList.toggle('is-active');
-
-                if(isMenuOpen) {
-                    mobileMenu.classList.remove('pointer-events-none');
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                    setTimeout(() => {
-                        mobileLinksDiv.classList.remove('translate-y-8', 'opacity-0');
-                        mobileLinksDiv.classList.add('translate-y-0', 'opacity-100');
-                    }, 50);
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    mobileLinksDiv.classList.remove('translate-y-0', 'opacity-100');
-                    mobileLinksDiv.classList.add('translate-y-8', 'opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('opacity-100');
-                        mobileMenu.classList.add('opacity-0');
-                        mobileMenu.classList.add('pointer-events-none');
-                    }, 300);
-                    document.body.style.overflow = '';
-                }
-            };
-
-            mobileBtn.addEventListener('click', toggleMenu);
-            links.forEach(link => link.addEventListener('click', toggleMenu));
-
-            const observerOptions = { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.15 };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-        });
-    </script>
+        <div class="direct-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg><div><small>Need to book directly?</small><a href="tel:+441440764884">Call Motormedic</a></div></div>
+      </aside>
+      <div class="form-panel reveal" id="booking"><div class="form-heading"><span class="eyebrow">Send An Enquiry</span><h2>Tell Us About Your Car</h2><p>Enter your details and describe the problem. We’ll receive your enquiry by email.</p></div>
+        <form class="booking-form" id="bookingForm">
+          <div class="field full"><label for="name">Full name <span>*</span></label><input id="name" name="name" autocomplete="name" placeholder="First name and surname" required></div>
+          <div class="field full"><label for="vehicle">Vehicle make and model <span>*</span></label><input id="vehicle" name="vehicle" placeholder="e.g. Ford Focus 1.6" required></div>
+          <div class="field full"><label for="message">What’s wrong with the car? <span>*</span></label><textarea id="message" name="message" placeholder="Describe the fault or tell us what you need help with..." required></textarea></div>
+          <div class="form-foot"><button class="button" type="submit">Send Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button><p class="form-note">This form opens your email app with the enquiry ready to send. Your appointment is not confirmed until the garage contacts you.</p><div class="form-status" id="formStatus" role="status" aria-live="polite"></div></div>
+        </form>
+      </div>
+    </div></section>
+    <section class="bottom-band"><div class="container"><div class="bottom-content reveal"><span class="eyebrow">Straightforward Vehicle Care</span><h2>Need Help Getting<br><span class="accent">Road-Ready?</span></h2><p>Contact Motormedic Test Centre Ltd to discuss your MOT, service, diagnosis or repair. We’ll help you work out the next step.</p><a class="button" href="tel:+441440764884">Call Motormedic <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 18a19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.9L7.2 9.4a16 16 0 0 0 6 6l1.8-1.8a2 2 0 0 1 1.9-.6l3 .5a2 2 0 0 1 2.1 2Z"/></svg></a></div></div></section>
+  </main>
+  <footer><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html" aria-label="Motor Medic home"><span class="brand-mark" aria-hidden="true">M</span><span class="brand-word">Motor<span>Medic</span></span></a><p>Motormedic Test Centre Ltd provides MOT testing, servicing, diagnostics, tyres and vehicle repairs in Haverhill, Suffolk. Practical help and straightforward vehicle care.</p></div><div class="footer-column"><h3>Quick Links</h3><p><a href="index.html">Home</a></p><p><a href="about-us.html">About Us</a></p><p><a href="index.html#services">Our Services</a></p><p><a href="#top">Book Now / Contact</a></p></div><div class="footer-column"><h3>Garage Information</h3><address>Unit 08, Spring Rise, Falconer Road<br>Haverhill, Suffolk CB9 7XU<br>United Kingdom</address><a class="footer-phone" href="tel:+441440764884">+44 1440 764884</a><p><a href="mailto:contactus@motormedictestcentre.co.uk">contactus@motormedictestcentre.co.uk</a></p></div></div><div class="container footer-bottom"><p>© <span id="year">2026</span> Motor Medic Test Centre Ltd. All rights reserved.</p><a href="#top">Back to Top ↑</a></div></footer>
+  <a class="mobile-call" href="tel:+441440764884" aria-label="Call Motormedic Test Centre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 18a19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.9L7.2 9.4a16 16 0 0 0 6 6l1.8-1.8a2 2 0 0 1 1.9-.6l3 .5a2 2 0 0 1 2.1 2Z"/></svg>Call Motormedic</a>
+  <script>
+    (()=>{
+      const body=document.body,header=document.getElementById('siteHeader'),toggle=document.getElementById('menuToggle'),nav=document.getElementById('mainNav'),progress=document.getElementById('scrollProgress');
+      document.documentElement.classList.add('js-ready');
+      const closeMenu=()=>{body.classList.remove('menu-open');nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu')};
+      toggle.addEventListener('click',()=>{const open=!nav.classList.contains('open');nav.classList.toggle('open',open);body.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu')});
+      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeMenu()));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+      let ticking=false;const onScroll=()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;header.classList.toggle('scrolled',scrollY>20);ticking=false})};window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+      const revealEls=document.querySelectorAll('.reveal');if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -35px 0px'});revealEls.forEach(el=>observer.observe(el))}else revealEls.forEach(el=>el.classList.add('is-visible'));
+      document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const data=new FormData(form);const fields=[['Name',data.get('name')],['Vehicle make and model',data.get('vehicle')],['Problem / enquiry',data.get('message')]];const subject='Vehicle enquiry - '+data.get('vehicle');const bodyText='Hello Motormedic,\n\nI would like to make an enquiry about my vehicle.\n\n'+fields.map(([label,value])=>`${label}: ${value}`).join('\n')+'\n\nPlease contact me to discuss the next steps.\n\nThank you.';const mailto='mailto:contactus@motormedictestcentre.co.uk?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(bodyText);const status=document.getElementById('formStatus');status.textContent='Your email app should open with the enquiry filled in. Please send the email to submit your request.';status.classList.add('show');window.location.href=mailto});
+      document.getElementById('year').textContent=new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
