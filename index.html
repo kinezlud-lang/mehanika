@@ -1,8 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#0b0d0f">
   <meta name="description" content="Reliable MOT testing, vehicle servicing, diagnostics, tyres, and repairs from a trusted local garage in Haverhill.">
   <title>Schedule Your MOT Today | Motormedic Test Centre Ltd</title>
@@ -33,6 +34,8 @@
       overflow-x: clip;
       scroll-behavior: smooth;
       scroll-padding-top: 92px;
+      -webkit-text-size-adjust: 100%;
+      touch-action: pan-y;
     }
 
     @supports not (overflow: clip) {
@@ -49,6 +52,9 @@
       width: 100%;
       max-width: 100%;
       overflow-x: clip;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
     }
 
     @supports not (overflow: clip) {
@@ -56,7 +62,7 @@
     }
 
     body.menu-open { overflow: hidden; }
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; -webkit-user-drag: none; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
 
@@ -149,18 +155,14 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 35px;
-      height: 35px;
-      display: grid;
-      place-items: center;
-      color: #111;
-      background: var(--accent);
-      font: 700 1.15rem/1 "Oswald", sans-serif;
-      clip-path: polygon(0 0,100% 0,100% 74%,74% 100%,0 100%);
+    .brand-logo {
+      display: block;
+      width: auto;
+      height: 42px;
+      max-width: 220px;
+      object-fit: contain;
+      object-position: left center;
     }
-
-    .brand span:last-child { color: var(--accent); }
 
     .nav-links {
       display: flex;
@@ -193,6 +195,7 @@
       letter-spacing: .12em;
       cursor: pointer;
       transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .button:hover {
@@ -636,95 +639,6 @@
 
     .feature-content p { max-width: 620px; margin: 0 auto 26px; }
 
-    .contact-section { padding: 105px 0 90px; background: #0d0f11; }
-    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
-    .contact-copy h2 { margin-top: 20px; }
-    .contact-copy > p { max-width: 440px; }
-
-    .contact-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .contact-details { margin-top: 42px; display: grid; gap: 20px; }
-    .contact-detail { display: flex; align-items: flex-start; gap: 15px; }
-
-    .contact-detail .trust-icon { width: 38px; height: 38px; flex-basis: 38px; }
-
-    .contact-detail small {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--muted-2);
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .contact-detail p, .contact-detail a {
-      margin: 0;
-      color: var(--text);
-      font-size: .94rem;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-detail a:hover { color: var(--accent); }
-
-    .map-card {
-      min-height: 450px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #15191c;
-    }
-
-    .map-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: .6;
-      background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-      background-size: 42px 42px;
-    }
-
-    .map-glow {
-      position: absolute;
-      width: 330px;
-      height: 330px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(252,165,17,.16), transparent 68%);
-    }
-
-    .map-pin {
-      position: absolute;
-      top: 43%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      display: grid;
-      place-items: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 50% 50% 50% 0;
-      rotate: -45deg;
-      background: var(--accent);
-      box-shadow: 0 0 0 12px rgba(252,165,17,.1), 0 0 0 28px rgba(252,165,17,.05);
-    }
-
-    .map-pin svg { width: 25px; height: 25px; color: #111; rotate: 45deg; }
-
-    .map-info {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      padding: 24px;
-      background: rgba(11,13,15,.94);
-      border: 1px solid var(--line);
-    }
-
-    .map-info h3 { color: var(--text); font-size: 1.5rem; margin-bottom: 5px; }
-    .map-info p { margin-bottom: 17px; font-size: .86rem; }
-
     footer { background: #08090a; border-top: 1px solid var(--line); }
 
     .footer-main {
@@ -761,7 +675,6 @@
     .footer-bottom p { margin: 0; }
     .footer-bottom a:hover { color: var(--text); }
 
-    .mobile-call { display: none; }
     .reveal { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -823,7 +736,6 @@
       .about-main-image { height: 385px; }
       .about-detail-image { height: 200px; }
       .section { padding: 85px 0; }
-      .contact-grid { gap: 40px; }
       .footer-main { gap: 30px; }
     }
 
@@ -831,7 +743,7 @@
       html { scroll-padding-top: 74px; }
       .container { width: calc(100% - 32px); max-width: 100%; }
       .brand { font-size: 1.4rem; }
-      .brand-mark { width: 31px; height: 31px; }
+      .brand-logo { height: 35px; max-width: 190px; }
       .hero { padding: 116px 0 54px; }
       .hero-grid { grid-template-columns: 1fr; gap: 34px; }
 
@@ -883,45 +795,10 @@
       .feature-content h2 { margin: 19px 0 21px; font-size: clamp(2.4rem, 10vw, 3.15rem); line-height: 1.02; }
       .feature-content p { margin: 0 0 26px; font-size: .98rem; line-height: 1.75; }
       .feature-content .button { width: 100%; min-height: 56px; }
-      .contact-section { padding: 72px 0 62px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-      .contact-copy > p { font-size: .98rem; line-height: 1.75; }
-      .contact-cta { display: grid; gap: 12px; margin-top: 25px; }
-      .contact-cta .button { width: 100%; min-height: 56px; }
-      .contact-details { margin-top: 34px; gap: 24px; }
-      .contact-detail { gap: 13px; }
-      .contact-detail .trust-icon { width: 40px; height: 40px; flex-basis: 40px; }
-      .contact-detail p, .contact-detail a { font-size: .9rem; line-height: 1.65; }
       .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 48px 0 35px; }
       .footer-bottom { flex-direction: column; gap: 8px; }
-
-      .mobile-call {
-        position: fixed;
-        z-index: 90;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        left: max(12px, env(safe-area-inset-left));
-        right: max(12px, env(safe-area-inset-right));
-        bottom: calc(10px + env(safe-area-inset-bottom));
-        min-height: 54px;
-        padding: 0 18px;
-        background: var(--accent);
-        color: #111;
-        font: 600 .8rem/1 "Oswald", sans-serif;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        box-shadow: 0 10px 30px rgba(0,0,0,.4);
-        border: 0;
-        border-radius: 2px;
-      }
-
-      .mobile-call svg { width: 19px; height: 19px; flex: 0 0 19px; }
-      body { padding-bottom: calc(78px + env(safe-area-inset-bottom)); }
     }
 
-    /* Performance-minded interaction polish */
     .scroll-progress {
       position: fixed;
       inset: 0 auto auto 0;
@@ -935,11 +812,11 @@
       will-change: transform;
     }
 
-    .button, .menu-toggle, .mobile-call, .service-row, .nav-links a {
+    .button, .menu-toggle, .service-row, .nav-links a {
       -webkit-tap-highlight-color: transparent;
     }
 
-    .button:active, .mobile-call:active { transform: scale(.985); }
+    .button:active { transform: scale(.985); }
     .service-row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -947,8 +824,6 @@
       .js-ready .service-row.reveal:nth-child(2) { transition-delay: .04s; }
       .js-ready .service-row.reveal:nth-child(3) { transition-delay: .08s; }
       .js-ready .service-row.reveal:nth-child(4) { transition-delay: .12s; }
-      .js-ready .service-row.reveal:nth-child(5) { transition-delay: .16s; }
-      .js-ready .service-row.reveal:nth-child(6) { transition-delay: .20s; }
     }
 
     @media (max-width: 640px) {
@@ -956,23 +831,21 @@
       .site-header { padding-top: env(safe-area-inset-top); }
       .nav-wrap { min-height: 70px; gap: 12px; }
       .brand { min-width: 0; font-size: clamp(1.2rem, 5.5vw, 1.4rem); }
+      .brand-logo { max-width: min(190px, 52vw); }
       .menu-toggle { flex: 0 0 44px; }
       .nav-links { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
       .nav-links a:not(.button) { font-size: clamp(1.35rem, 6vw, 1.85rem); }
-      .hero-grid, .about-grid, .contact-grid, .footer-main, .trust-grid, .service-row { min-width: 0; }
-      .hero-visual, .hero-copy, .about-copy, .feature-content, .contact-copy { min-width: 0; }
+      .hero-grid, .about-grid, .footer-main, .trust-grid, .service-row { min-width: 0; }
+      .hero-visual, .hero-copy, .about-copy, .feature-content { min-width: 0; }
       .hero-watermark { display: none; }
       .service-row { grid-template-columns: 26px minmax(0, 1fr) 30px; gap: 9px; }
       .service-arrow { width: 30px; height: 30px; }
-      .service-description, .contact-detail p, .contact-detail a, .footer-column address { overflow-wrap: anywhere; word-break: normal; }
+      .service-description, .footer-column address { overflow-wrap: anywhere; word-break: normal; }
       .hero h1 { font-size: clamp(3.15rem, 15.7vw, 5.2rem); overflow-wrap: normal; }
       .hero-meta { font-size: .75rem; }
       .service-row { align-items: start; }
       .service-title { line-height: 1.12; }
       .service-description { line-height: 1.65; }
-      .map-card { min-height: 360px; }
-      .contact-detail p, .contact-detail a { line-height: 1.6; }
-      .mobile-call { min-height: 54px; }
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -1002,10 +875,8 @@
 
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <!-- LOGO: vraća na početnu stranicu -->
       <a class="brand" href="index.html#top" aria-label="Motor Medic home">
-        <span class="brand-mark" aria-hidden="true">M</span>
-        <span>Motor<span>Medic</span></span>
+        <img class="brand-logo" src="logo.png" alt="Motormedic logo">
       </a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
@@ -1014,14 +885,9 @@
       </button>
 
       <nav class="nav-links" id="mainNav" aria-label="Main navigation">
-        <!-- Ovi linkovi vode na odgovarajuće sekcije početne stranice -->
         <a href="index.html#about">About us</a>
         <a href="index.html#services">Services</a>
-
-        <!-- CONTACT vodi na posebnu contact.html stranicu -->
         <a href="contact.html">Contact</a>
-
-        <!-- Book Now takođe vodi na kontakt stranicu -->
         <a class="button" href="contact.html">Book Now <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -1036,7 +902,6 @@
           <p>Reliable MOT testing, vehicle servicing, diagnostics, tyres, and repairs from a trusted local garage in Haverhill.</p>
 
           <div class="hero-actions">
-            <!-- Dugme vodi na kontakt formu -->
             <a class="button" href="contact.html">Book MOT Online <span aria-hidden="true">↗</span></a>
             <a class="button button-outline" href="index.html#services">Explore Our Services <span aria-hidden="true">↓</span></a>
           </div>
@@ -1194,26 +1059,6 @@
             </span>
             <span class="service-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
-
-          <a class="service-row reveal" href="tel:+441440764884" aria-label="Call about vehicle servicing">
-            <span class="service-number">05</span>
-            <span>
-              <span class="service-title">Vehicle Servicing</span>
-              <span class="service-description">Motormedic offers vehicle servicing to help keep your vehicle safe, roadworthy, and reliable. Contact our team to discuss your servicing needs.</span>
-              <span class="service-link">Ask About Servicing ↗</span>
-            </span>
-            <span class="service-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </a>
-
-          <a class="service-row reveal" href="tel:+441440764884" aria-label="Call about brakes and batteries">
-            <span class="service-number">06</span>
-            <span>
-              <span class="service-title">Brakes & Batteries</span>
-              <span class="service-description">Our range of garage services includes brakes, batteries, and general repairs. Contact our team for practical advice about your vehicle.</span>
-              <span class="service-link">Ask About Services ↗</span>
-            </span>
-            <span class="service-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </a>
         </div>
       </div>
     </section>
@@ -1231,63 +1076,7 @@
         <span class="eyebrow">Trusted Local Garage</span>
         <h2>Keep Your Vehicle<br><span class="accent">Roadworthy.</span></h2>
         <p>Whether your vehicle needs a routine MOT, a fault diagnosis, or repair work, our team is ready to help with professional service and practical advice.</p>
-        <a class="button" href="contact.html">Book Now <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <!-- Kontakt sekcija ostaje na početnoj strani, ali navigacija vodi na contact.html -->
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <span class="eyebrow">Contact Us</span>
-          <h2>How Can We<br><span class="accent">Help You?</span></h2>
-          <p>Get in touch with Motormedic Test Centre Ltd to ask about MOT testing, vehicle servicing, diagnostics, tyres, brakes, batteries, and repairs.</p>
-
-          <div class="contact-cta">
-            <a class="button" href="contact.html">Book Now <span aria-hidden="true">↗</span></a>
-            <a class="button button-outline" href="mailto:contactus@motormedictestcentre.co.uk">Send an email</a>
-          </div>
-
-          <div class="contact-details">
-            <div class="contact-detail">
-              <span class="trust-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="2.5"/>
-                </svg>
-              </span>
-              <div>
-                <small>Visit the garage</small>
-                <p>Unit 08, Spring Rise, Falconer Road<br>Haverhill, Suffolk CB9 7XU, United Kingdom</p>
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <span class="trust-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
-                </svg>
-              </span>
-              <div>
-                <small>Call us</small>
-                <a href="tel:+441440764884">+44 1440 764884</a>
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <span class="trust-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="5" width="18" height="14" rx="2"/>
-                  <path d="m3 7 9 6 9-6"/>
-                </svg>
-              </span>
-              <div>
-                <small>Email</small>
-                <a href="mailto:contactus@motormedictestcentre.co.uk">contactus@motormedictestcentre.co.uk</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a class="button" href="contact.html">Contact <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
@@ -1296,8 +1085,7 @@
     <div class="container footer-main">
       <div class="footer-brand">
         <a class="brand" href="index.html#top" aria-label="Motor Medic home">
-          <span class="brand-mark" aria-hidden="true">M</span>
-          <span>Motor<span>Medic</span></span>
+          <img class="brand-logo" src="logo.png" alt="Motormedic logo">
         </a>
         <p>Motormedic Test Centre Ltd provides MOT testing, tyres, diagnostics, servicing, and vehicle repairs in Haverhill. We are committed to reliable workmanship, honest advice, and customer-focused service.</p>
       </div>
@@ -1322,14 +1110,6 @@
       <a href="index.html#top">Back to Top ↑</a>
     </div>
   </footer>
-
-  <!-- Mobilno dugme za poziv ostaje direktno povezano sa telefonom -->
-  <a class="mobile-call" href="tel:+441440764884" aria-label="Book now by calling Motormedic Test Centre">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
-    </svg>
-    <span>Book Now</span>
-  </a>
 
   <script>
     (() => {
@@ -1401,7 +1181,27 @@
           observer.observe(element);
         });
       }
+
+      document.addEventListener('contextmenu', event => {
+        if (!event.target.closest('a, button')) {
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener('dragstart', event => {
+        if (event.target.tagName === 'IMG') {
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener('keydown', event => {
+        const key = event.key.toLowerCase();
+        if ((event.ctrlKey || event.metaKey) && ['+', '-', '=', '0', 'c', 'u', 's', 'p'].includes(key)) {
+          event.preventDefault();
+        }
+      });
     })();
   </script>
 </body>
 </html>
+```
